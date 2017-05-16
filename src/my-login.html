@@ -1,0 +1,64 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-login">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+        height: 95%;
+      }
+
+      .login-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-card {
+        padding: 30px;
+        color: var(--app-primary-color);
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+
+      .login-card paper-button {
+        float: right;
+        margin: 10px 0 0 0;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+      }
+    </style>
+
+    <div class="login-container">
+      <div class="login-card">
+        <h2>Login to superstars</h2>
+
+        <paper-input label="Email" id="login_email"></paper-input>
+        <paper-input label="Password" type="password" id="login_password"></paper-input>
+        <paper-button raised on-click="loginWithEmailAndPassword">Login</paper-button>
+      </div>
+    <div>
+  </template>
+
+  <script>
+    class MyLogin extends Polymer.Element {
+      static get is() {
+        return 'my-login';
+      }
+
+      loginWithEmailAndPassword() {
+        console.log('Doing it with ' + this.$.login_email.value + ' and ' + this.$.login_password.value);
+      }
+    }
+    window.customElements.define(MyLogin.is, MyLogin);
+  </script>
+</dom-module>

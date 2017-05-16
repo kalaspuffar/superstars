@@ -1,0 +1,79 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-profile">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+      padding: 10px;
+      .profile {
+        display: flex;
+        flex-direction: row;
+        width: 800px;
+      }
+      .profile-info {
+        flex: 12;
+      }
+      .profile-image {
+        height: 250px;
+        flex: 1;
+      }
+
+      .ads-image {
+        padding: 4px;
+        height: 600px;
+        float: right;
+      }
+
+      h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+    </style>
+
+    <img class="ads-image" src="images/towel-ads.png" />
+    <div class="card profile">
+      <div class="profile-info">
+        <h2>Profile</h2>
+        <h3>Address</h3>
+        <dl>
+          <dt>Name</dt>
+          <dd>Roger D. Clark</dd>
+          <dt>Address</dt>
+          <dd>3028 Archwood Avenue</dd>
+          <dt>City, County Zipcode</dt>
+          <dd>Casper, WY 82601</dd>
+        </dl>
+
+        <h3>Contact</h3>
+        <dl>
+          <dt>Phone</dt>
+          <dd>307-785-8466</dd>
+          <dt>Email</dt>
+          <dd>RogerDClark@rhyta.com</dd>
+          <dt>Website</dt>
+          <dd>thelittlehoney.com</dd>
+        </dl>
+
+        <h3>Occupation</h3>
+        <dl>
+          <dt>Company</dt>
+          <dd>New World Realty</dd>
+          <dt>Role</dt>
+          <dd>Apartment leasing agent</dd>
+        </dl>
+      </div>
+      <img class="profile-image" src="images/profile.jpg" />
+    </div>
+  </template>
+
+  <script>
+    class MyProfile extends Polymer.Element {
+      static get is() { return 'my-profile'; }
+    }
+
+    window.customElements.define(MyProfile.is, MyProfile);
+  </script>
+</dom-module>
