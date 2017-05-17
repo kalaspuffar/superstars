@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-messages">
@@ -38,190 +39,23 @@
       }
     </style>
 
+    <iron-ajax auto url="http://localhost:3000/users/[[userId]]/messages"
+    handle-as="json" last-response="{{messages}}"
+    debounce-duration="300"></iron-ajax>
+
     <img class="ads-image" src="images/coffee-ads.png" />
     <div class="card messages">
       <h2>Messages</h2>
       <ul class="messages-list">
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida consectetur dolor at pretium. Nulla porttitor vehicula ex, in condimentum lacus sagittis eget. Vivamus porttitor mauris in finibus laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin et commodo odio, quis ultrices odio. Vestibulum vehicula eros vel aliquam blandit. Phasellus volutpat varius libero ac posuere. Nulla odio est, condimentum sit amet diam in, viverra lobortis est. Nam volutpat augue sed enim dapibus, ultrices feugiat lectus viverra. Duis lectus massa, mattis id lobortis at, volutpat sit amet orci. Nulla facilisi. Etiam eget quam aliquet, varius velit et, posuere turpis. Pellentesque et sodales ante. Pellentesque id porta magna. Proin eget libero magna.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Integer posuere lorem felis, eget placerat lectus pretium sit amet. Sed at ultricies ligula, eget rhoncus massa. Nullam eleifend lectus vitae tellus ullamcorper, eu molestie nisi volutpat. Nam dictum ligula vitae laoreet maximus. Curabitur aliquam ac lorem ac laoreet. Proin erat nisi, lacinia sed volutpat nec, lacinia sit amet tellus. Phasellus placerat justo at viverra blandit. Pellentesque elementum odio dolor, at suscipit magna elementum vel. Phasellus porttitor velit ut tortor rutrum, at blandit mi dictum. Mauris nec erat ornare, varius quam sit amet, fringilla quam. Nullam laoreet cursus ipsum vel sodales.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Suspendisse tortor sapien, placerat eget lacus non, mollis fringilla diam. Nullam suscipit tempus tristique. Pellentesque sed pellentesque tellus, quis consequat erat. Vestibulum tempus nisl a efficitur facilisis. Vivamus eu nisl ut ligula porta sollicitudin. Morbi vel dictum nunc. Donec quis suscipit dui, ac sodales libero. Nullam pulvinar ipsum augue, non eleifend nibh cursus sit amet. Mauris volutpat eleifend efficitur. Quisque est sapien, faucibus eget fermentum et, luctus nec turpis. Mauris euismod, diam at tristique auctor, enim nisl interdum tellus, non tempus enim elit ac dolor. Nullam id est nec risus bibendum porta. Suspendisse vel dictum est.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Maecenas luctus nec odio vulputate consequat. Duis interdum consectetur pellentesque. Phasellus eget ullamcorper neque. Cras in dolor sed lorem ultricies tincidunt. Quisque sagittis ac dui sed rhoncus. Mauris et aliquet massa, at feugiat neque. Phasellus a ipsum consequat, feugiat leo vitae, imperdiet augue. Proin volutpat ornare turpis eget commodo. Integer ultricies purus quis ligula consectetur, consequat dapibus tellus interdum. Aliquam sollicitudin viverra lectus, ac condimentum erat vehicula id. Pellentesque congue risus ut faucibus scelerisque.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              In viverra ligula a tempor tempor. Mauris sapien ex, viverra quis eros accumsan, interdum maximus ipsum. Nulla facilisi. Donec scelerisque at orci sed consequat. Aliquam ut eros sit amet est fermentum sollicitudin. Suspendisse ipsum arcu, tempus id auctor faucibus, posuere vel sapien. Nam id massa lobortis ex varius euismod nec quis diam. Vestibulum nec justo tempor nisl commodo tempor non a neque.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Vivamus tristique eget purus vel tempus. Nulla ultrices eu nisi sed lacinia. Proin luctus lorem et est lacinia interdum. Duis tristique, nisi at vehicula congue, purus neque sollicitudin tellus, quis consectetur dui nulla sed risus. Aenean sit amet consequat enim. Curabitur et tellus non elit lacinia aliquet. Etiam quis ultrices justo, et tincidunt velit. Nulla consectetur egestas risus at placerat. Sed euismod ligula sed lacus iaculis, nec efficitur mauris euismod. Sed fringilla, odio quis imperdiet laoreet, erat sem iaculis quam, sollicitudin suscipit lorem orci quis enim. Nunc vitae magna sit amet libero sagittis pulvinar.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Donec dictum ipsum at suscipit molestie. Proin faucibus orci pellentesque sollicitudin rutrum. Proin quis ligula at risus iaculis fringilla. Duis consequat ultricies cursus. Quisque tempus rhoncus dolor, sit amet accumsan dui pretium eu. Etiam sed rutrum justo. Nunc posuere mi a tortor porta, id commodo nunc posuere. Suspendisse et lacus semper, commodo sem eleifend, lobortis ipsum. Etiam condimentum a purus sit amet pellentesque.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              In ut justo molestie, porta justo id, gravida augue. Duis vehicula non enim eu bibendum. Proin et lorem laoreet, condimentum dolor pellentesque, eleifend nisi. Quisque eget justo mauris. Praesent consectetur pharetra sem quis mollis. Vivamus in consectetur ante. Integer et ex eget ipsum malesuada fringilla. Aliquam nec risus justo. Nunc pellentesque orci quis metus venenatis, nec dignissim lectus posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at justo interdum, luctus mauris sed, molestie libero. Donec bibendum interdum tortor eu tincidunt. Proin eu scelerisque nisl, a rutrum dolor.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Curabitur a leo ac eros pulvinar tincidunt ac et dui. Integer egestas tellus at mauris suscipit, id commodo massa efficitur. Quisque venenatis dapibus nibh, nec maximus libero commodo eu. Morbi nec venenatis risus, nec pharetra nulla. Etiam id justo quis erat volutpat ornare non sed enim. Vivamus tortor nunc, aliquet at placerat quis, maximus a mi. Nullam rutrum imperdiet gravida. Maecenas eu justo fringilla, venenatis ex non, maximus est.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Sed eget ligula id mi gravida suscipit. Suspendisse dictum, lacus vitae feugiat interdum, purus quam semper metus, et vehicula quam erat id felis. In eu enim diam. Integer ac tincidunt libero. Nam feugiat, mi fermentum congue porta, massa lacus vulputate dui, sagittis maximus dolor eros sit amet ligula. Nulla fermentum porta tellus, a laoreet arcu accumsan vel. Integer sit amet est libero. Vivamus sodales sem magna, nec elementum elit cursus ut.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Fusce euismod sodales lectus, in maximus nulla iaculis quis. Nulla diam arcu, volutpat ac ipsum sit amet, mattis aliquet tellus. Fusce rutrum pellentesque risus, in ullamcorper sem porttitor feugiat. Praesent eu ligula volutpat risus dapibus feugiat. Ut ut eros pharetra, vulputate arcu sed, bibendum orci. Vivamus vestibulum tempus massa eget sagittis. Cras et vulputate ipsum. In fermentum erat a enim eleifend, at tristique nulla sodales.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Ut eu nibh volutpat, sagittis nulla a, facilisis arcu. Donec lacus lectus, cursus vitae enim quis, auctor pulvinar arcu. Donec commodo et ante at molestie. Pellentesque auctor porta velit sed dapibus. Suspendisse nec sapien nec neque bibendum bibendum. In feugiat feugiat mi a dapibus. Phasellus diam est, sollicitudin sit amet nunc ut, interdum ultricies felis. Vivamus porttitor venenatis aliquet. Vestibulum mattis maximus arcu, pharetra posuere dui tristique ut. Nam diam odio, viverra sit amet orci et, vehicula fermentum ipsum. Vestibulum in nibh eleifend, aliquam lorem ut, faucibus tellus. Pellentesque vitae erat imperdiet, hendrerit sapien vitae, tempor elit. Etiam eleifend posuere rhoncus. Ut porttitor, ex id iaculis rutrum, enim dui luctus mi, sed mattis quam urna nec turpis. Praesent sollicitudin ex sed tincidunt bibendum.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Aenean eu dapibus erat. In laoreet urna vitae libero feugiat, eu porttitor purus fermentum. Quisque pulvinar euismod maximus. Sed vitae sem et erat volutpat congue non at urna. Nam eu leo est. Donec gravida rutrum sollicitudin. Donec efficitur, ipsum non venenatis laoreet, ante metus pulvinar erat, quis faucibus arcu erat sagittis lorem. Praesent tempus scelerisque nisl vel rhoncus. Sed et quam a eros eleifend pellentesque. Aenean efficitur lorem eu laoreet consectetur.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Donec vulputate congue erat nec semper. Pellentesque ut magna ac ex imperdiet vestibulum et in dolor. Quisque malesuada purus eget mi ullamcorper porta nec ut lorem. Cras dictum magna vel convallis tempus. Nunc id volutpat enim, sit amet pretium ipsum. Morbi sit amet sodales quam, id viverra nulla. Quisque at magna neque. Maecenas posuere eu lectus sit amet ornare. Maecenas cursus lectus vitae lorem pulvinar euismod. Maecenas cursus, justo vel semper pretium, odio eros fringilla ligula, ut cursus quam quam eget ipsum. Quisque hendrerit nec nisi sed semper. Mauris laoreet semper dolor id tempor. Ut ut libero in ante interdum fermentum. Integer at est at turpis faucibus interdum. Pellentesque aliquam varius nisl, eget tempus enim vulputate ac.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Etiam ornare dictum bibendum. Proin placerat lacus a tellus ullamcorper, in dignissim diam luctus. Fusce posuere, mi ut tristique viverra, nulla erat rhoncus dolor, et ornare sem justo nec metus. Quisque efficitur faucibus lorem et iaculis. Aliquam ac arcu a libero pretium laoreet id non turpis. In condimentum justo sed scelerisque finibus. Quisque vitae nisl arcu. Pellentesque non porttitor velit, ut cursus est. Praesent cursus urna leo, non porta enim commodo eget. Nullam quis lobortis ipsum, nec mollis leo. Nulla at turpis id metus pellentesque ultrices nec at odio. Praesent erat ipsum, pulvinar vitae urna eget, condimentum accumsan mauris. Morbi a est mi.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Donec tristique bibendum semper. Vestibulum at risus non odio egestas ultricies. Phasellus dignissim eleifend vulputate. Donec porta lacus enim, at accumsan metus auctor sed. Duis et metus nec nulla pharetra pellentesque semper id leo. Sed malesuada hendrerit ultricies. Fusce augue quam, mattis quis viverra vel, ullamcorper et purus.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Integer vehicula nunc est, non rhoncus quam ultrices vel. Fusce auctor ornare libero, sed varius ante feugiat sed. Mauris iaculis felis sit amet tincidunt finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam tempus sollicitudin erat sagittis porta. Maecenas in posuere nibh. Mauris varius mi orci, ullamcorper euismod sapien faucibus id. Nam et convallis nisl. Maecenas rutrum purus bibendum odio blandit, ut ultrices ante malesuada. Phasellus sagittis erat hendrerit est euismod blandit in blandit mauris. Duis nibh nibh, scelerisque eu odio egestas, molestie condimentum dui. Nulla vestibulum aliquam volutpat. Aliquam et libero vel arcu efficitur sodales a id sem. Maecenas elementum convallis consequat. Proin auctor malesuada tincidunt.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Nam varius dolor turpis, id hendrerit arcu ultricies ut. Donec nec orci aliquet, semper erat at, porttitor lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam blandit maximus libero, nec porta nunc. Aliquam nulla nisl, blandit vel risus vel, fringilla pretium quam. Pellentesque lacinia est nec arcu auctor, et varius ipsum commodo. Cras vitae dui nec massa porta iaculis et et dui. Sed purus enim, semper tincidunt lorem non, porta eleifend elit. Morbi nec purus nunc. Nulla facilisi. Donec ultrices feugiat luctus. Nullam rhoncus elit imperdiet mollis sodales.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Donec ut mauris quis urna ornare mollis. Donec placerat arcu ut elementum blandit. Aliquam ultricies ut urna eleifend varius. Sed id molestie lorem. Nullam suscipit odio ac sapien sodales, tristique venenatis dui accumsan. Aliquam a felis vitae lacus ultrices vehicula. Aenean euismod, diam nec rutrum blandit, tortor ligula imperdiet leo, eu venenatis ligula purus eget nunc. Proin rhoncus felis quam, ut posuere odio fringilla eu. Suspendisse consequat, lacus eu porta porttitor, justo justo tempus eros, a fermentum turpis velit id metus. Curabitur eros lacus, tincidunt vitae cursus vitae, pharetra dictum ante. Curabitur eget quam nisl. Suspendisse potenti. Vivamus eget rutrum neque.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/user.png" />
-          <div class="message">
-            <b>Roger D. Clark</b>
-            <p>
-              Mauris efficitur nisl ex, non rutrum sem porta a. Morbi lorem justo, tempus ut leo eu, elementum aliquet nulla. Fusce egestas leo eu posuere aliquet. Sed dignissim tempor erat, ac feugiat urna rhoncus et. Morbi dignissim bibendum mauris sit amet cursus. Nam eu blandit justo. Quisque commodo nulla nec nibh blandit ornare sit amet rhoncus augue. Pellentesque nec tincidunt lacus. Proin rhoncus leo vel finibus pulvinar. Cras facilisis finibus lorem et vestibulum. Mauris laoreet ex et erat luctus efficitur. Donec auctor malesuada ipsum non commodo. Mauris et felis leo.
-            </p>
-          </div>
-        </li>
+        <template is="dom-repeat" items="{{messages}}">
+          <li>
+            <img src="[[item.image]]" />
+            <div class="message">
+              <b>[[item.name]]</b>
+              <p>[[item.message]]</p>
+            </div>
+          </li>
+        </template>
       </ul>
     </div>
   </template>
@@ -229,6 +63,19 @@
   <script>
     class MyMessages extends Polymer.Element {
       static get is() { return 'my-messages'; }
+
+      static get properties() {
+        return {
+          userId: {
+            type: String,
+            value: "1"
+          },
+          messages: {
+            type: Object,
+            notify: true
+          }
+        }
+      }
     }
 
     window.customElements.define(MyMessages.is, MyMessages);

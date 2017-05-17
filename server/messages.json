@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Roger D. Clark",
+    "image": "images/profile-man.jpg",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida consectetur dolor at pretium. Nulla porttitor vehicula ex, in condimentum lacus sagittis eget. Vivamus porttitor mauris in finibus laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin et commodo odio, quis ultrices odio. Vestibulum vehicula eros vel aliquam blandit. Phasellus volutpat varius libero ac posuere. Nulla odio est, condimentum sit amet diam in, viverra lobortis est. Nam volutpat augue sed enim dapibus, ultrices feugiat lectus viverra. Duis lectus massa, mattis id lobortis at, volutpat sit amet orci. Nulla facilisi. Etiam eget quam aliquet, varius velit et, posuere turpis. Pellentesque et sodales ante. Pellentesque id porta magna. Proin eget libero magna."
+  },
+  {
+    "name": "Christina G. Austin",
+    "image": "images/profile-woman.jpg",
+    "message": "Integer posuere lorem felis, eget placerat lectus pretium sit amet. Sed at ultricies ligula, eget rhoncus massa. Nullam eleifend lectus vitae tellus ullamcorper, eu molestie nisi volutpat. Nam dictum ligula vitae laoreet maximus. Curabitur aliquam ac lorem ac laoreet. Proin erat nisi, lacinia sed volutpat nec, lacinia sit amet tellus. Phasellus placerat justo at viverra blandit. Pellentesque elementum odio dolor, at suscipit magna elementum vel. Phasellus porttitor velit ut tortor rutrum, at blandit mi dictum. Mauris nec erat ornare, varius quam sit amet, fringilla quam. Nullam laoreet cursus ipsum vel sodales."
+  },
+  {
+    "name": "Tom D. Lowry",
+    "image": "images/profile-eyes.jpg",
+    "message": "Suspendisse tortor sapien, placerat eget lacus non, mollis fringilla diam. Nullam suscipit tempus tristique. Pellentesque sed pellentesque tellus, quis consequat erat. Vestibulum tempus nisl a efficitur facilisis. Vivamus eu nisl ut ligula porta sollicitudin. Morbi vel dictum nunc. Donec quis suscipit dui, ac sodales libero. Nullam pulvinar ipsum augue, non eleifend nibh cursus sit amet. Mauris volutpat eleifend efficitur. Quisque est sapien, faucibus eget fermentum et, luctus nec turpis. Mauris euismod, diam at tristique auctor, enim nisl interdum tellus, non tempus enim elit ac dolor. Nullam id est nec risus bibendum porta. Suspendisse vel dictum est."
+  },
+  {
+    "name": "Roger D. Clark",
+    "image": "images/profile-man.jpg",
+    "message": "Maecenas luctus nec odio vulputate consequat. Duis interdum consectetur pellentesque. Phasellus eget ullamcorper neque. Cras in dolor sed lorem ultricies tincidunt. Quisque sagittis ac dui sed rhoncus. Mauris et aliquet massa, at feugiat neque. Phasellus a ipsum consequat, feugiat leo vitae, imperdiet augue. Proin volutpat ornare turpis eget commodo. Integer ultricies purus quis ligula consectetur, consequat dapibus tellus interdum. Aliquam sollicitudin viverra lectus, ac condimentum erat vehicula id. Pellentesque congue risus ut faucibus scelerisque."
+  },
+  {
+    "name": "Tom D. Lowry",
+    "image": "images/profile-eyes.jpg",
+    "message": "In viverra ligula a tempor tempor. Mauris sapien ex, viverra quis eros accumsan, interdum maximus ipsum. Nulla facilisi. Donec scelerisque at orci sed consequat. Aliquam ut eros sit amet est fermentum sollicitudin. Suspendisse ipsum arcu, tempus id auctor faucibus, posuere vel sapien. Nam id massa lobortis ex varius euismod nec quis diam. Vestibulum nec justo tempor nisl commodo tempor non a neque."
+  },
+  {
+    "name": "Christina G. Austin",
+    "image": "images/profile-woman.jpg",
+    "message": "Vivamus tristique eget purus vel tempus. Nulla ultrices eu nisi sed lacinia. Proin luctus lorem et est lacinia interdum. Duis tristique, nisi at vehicula congue, purus neque sollicitudin tellus, quis consectetur dui nulla sed risus. Aenean sit amet consequat enim. Curabitur et tellus non elit lacinia aliquet. Etiam quis ultrices justo, et tincidunt velit. Nulla consectetur egestas risus at placerat. Sed euismod ligula sed lacus iaculis, nec efficitur mauris euismod. Sed fringilla, odio quis imperdiet laoreet, erat sem iaculis quam, sollicitudin suscipit lorem orci quis enim. Nunc vitae magna sit amet libero sagittis pulvinar."
+  }
+]

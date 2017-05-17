@@ -7,6 +7,7 @@
     "eslint-plugin-html": "^2.0.0"
   },
   "scripts": {
+    "start": "node server/index.js",
     "lint": "npm run lint:javascript",
     "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "polymer test",

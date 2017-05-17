@@ -17,7 +17,8 @@
         flex: 12;
       }
       .profile-image {
-        height: 250px;
+        height: 300px;
+        width: 300px;
         flex: 1;
       }
 
@@ -33,6 +34,10 @@
       }
     </style>
 
+    <iron-ajax auto url="http://localhost:3000/users/[[userId]]"
+      handle-as="json" last-response="{{profile}}"
+      debounce-duration="300"></iron-ajax>
+
     <img class="ads-image" src="images/towel-ads.png" />
     <div class="card profile">
       <div class="profile-info">
@@ -40,38 +45,50 @@
         <h3>Address</h3>
         <dl>
           <dt>Name</dt>
-          <dd>Roger D. Clark</dd>
+          <dd>[[profile.name]]</dd>
           <dt>Address</dt>
-          <dd>3028 Archwood Avenue</dd>
+          <dd>[[profile.address]]</dd>
           <dt>City, County Zipcode</dt>
-          <dd>Casper, WY 82601</dd>
+          <dd>[[profile.city]], [[profile.county]] [[profile.zipcode]]</dd>
         </dl>
 
         <h3>Contact</h3>
         <dl>
           <dt>Phone</dt>
-          <dd>307-785-8466</dd>
+          <dd>[[profile.phone]]</dd>
           <dt>Email</dt>
-          <dd>RogerDClark@rhyta.com</dd>
+          <dd>[[profile.email]]</dd>
           <dt>Website</dt>
-          <dd>thelittlehoney.com</dd>
+          <dd>[[profile.website]]</dd>
         </dl>
 
         <h3>Occupation</h3>
         <dl>
           <dt>Company</dt>
-          <dd>New World Realty</dd>
+          <dd>[[profile.company]]</dd>
           <dt>Role</dt>
-          <dd>Apartment leasing agent</dd>
+          <dd>[[profile.role]]</dd>
         </dl>
       </div>
-      <img class="profile-image" src="images/profile.jpg" />
+      <img class="profile-image" src="[[profile.image]]" />
     </div>
   </template>
 
   <script>
     class MyProfile extends Polymer.Element {
       static get is() { return 'my-profile'; }
+      static get properties() {
+        return {
+          userId: {
+            type: String,
+            value: "1"
+          },
+          profile: {
+            type: Object,
+            notify: true
+          }
+        }
+      }
     }
 
     window.customElements.define(MyProfile.is, MyProfile);
