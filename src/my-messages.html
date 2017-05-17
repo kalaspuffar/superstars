@@ -39,9 +39,9 @@
       }
     </style>
 
-    <iron-ajax auto url="http://localhost:3000/users/[[userId]]/messages"
-    handle-as="json" last-response="{{messages}}"
-    debounce-duration="300"></iron-ajax>
+    <iron-ajax auto with-credentials url="http://localhost:3000/messages"
+      handle-as="json" last-response="{{messages}}"
+      debounce-duration="300"></iron-ajax>
 
     <img class="ads-image" src="images/coffee-ads.png" />
     <div class="card messages">

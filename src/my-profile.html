@@ -34,7 +34,7 @@
       }
     </style>
 
-    <iron-ajax auto url="http://localhost:3000/users/[[userId]]"
+    <iron-ajax auto with-credentials url="http://localhost:3000/profile"
       handle-as="json" last-response="{{profile}}"
       debounce-duration="300"></iron-ajax>
 
