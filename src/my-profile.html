@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-profile">
@@ -14,12 +15,11 @@
         width: 800px;
       }
       .profile-info {
-        flex: 12;
       }
       .profile-image {
         height: 300px;
         width: 300px;
-        flex: 1;
+        margin-left: auto;
       }
 
       .ads-image {
@@ -34,7 +34,9 @@
       }
     </style>
 
-    <iron-ajax auto with-credentials url="http://localhost:3000/profile"
+    <iron-ajax auto with-credentials
+      url="http://localhost:3000/profile"
+      id="profileAjax"
       handle-as="json" last-response="{{profile}}"
       debounce-duration="300"></iron-ajax>
 
@@ -88,6 +90,10 @@
             notify: true
           }
         }
+      }
+
+      reload() {
+        this.$.profileAjax.generateRequest();
       }
     }
 

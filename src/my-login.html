@@ -45,7 +45,8 @@
       method="POST"
       content-type="application/json"
       handle-as="json"
-      on-response="_handleLoginAjaxResponse"
+      last-response="{{sessionData}}"
+      with-credentials
       debounce-duration="300"></iron-ajax>
 
     <div class="login-container">
@@ -54,7 +55,7 @@
 
         <paper-input label="Email" id="loginEmail"></paper-input>
         <paper-input label="Password" type="password" id="loginPassword"></paper-input>
-        <paper-button raised on-click="loginWithEmailAndPassword">Login</paper-button>
+        <paper-button raised on-click="_loginWithEmailAndPassword">Login</paper-button>
       </div>
     <div>
   </template>
@@ -65,13 +66,27 @@
         return 'my-login';
       }
 
-      loginWithEmailAndPassword() {
+      static get properties() {
+        return {
+          sessionData: {
+            type: Object,
+            notify: true,
+            observer: '_sessionDataChanged'
+          }
+        }
+      }
+
+      _sessionDataChanged() {
+        document.cookie = 'loginCookie' + "=" + this.sessionData.loginCookie + ";path=/";
+        document.location.href = '/profile';
+      }
+
+      _loginWithEmailAndPassword() {
         this.$.loginAjax.body = {
           name: this.$.loginEmail.value,
           pass: this.$.loginPassword.value
         };
         this.$.loginAjax.generateRequest();
-
         console.log('Doing it with ' + this.$.loginEmail.value + ' and ' + this.$.loginPassword.value);
       }
     }
