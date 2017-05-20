@@ -3,6 +3,7 @@ var app = express();
 var fs = require("fs");
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var crypto = require('crypto');
 
 var profiles = {};
 
@@ -26,7 +27,6 @@ app.use(function (req, res, next) {
 });
 
 app.post('/login', function (req, res) {
-  const crypto = require('crypto');
   const secret = 'abcdefg';
   const hash = crypto.createHmac('sha256', secret)
                      .update(req.body.pass)
