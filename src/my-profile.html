@@ -1,5 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-profile">
@@ -24,7 +26,7 @@
 
       .ads-image {
         padding: 4px;
-        height: 600px;
+        height: 450px;
         float: right;
       }
 
@@ -34,10 +36,30 @@
       }
     </style>
 
+    <firebase-app
+      auth-domain="superstars-8b9f2.firebaseapp.com"
+      database-url="https://superstars-8b9f2.firebaseio.com"
+      api-key="AIzaSyAJUp_QpzB15XKCT20rHa_6_NUABSYfWmE"
+      >
+    </firebase-app>
+    <firebase-auth
+      id="auth" user="{{user}}"
+      provider="google"
+      on-error="_handleError">
+    </firebase-auth>
+
     <iron-ajax auto with-credentials
       url="http://localhost:3000/profile"
       id="profileAjax"
       handle-as="json" last-response="{{profile}}"
+      debounce-duration="300"></iron-ajax>
+
+    <iron-ajax with-credentials
+      url="http://localhost:3000/signup"
+      id="signupAjax"
+      method="POST"
+      content-type="application/json"
+      handle-as="json" on-response="_signupResponse"
       debounce-duration="300"></iron-ajax>
 
     <img class="ads-image" src="images/towel-ads.png" />
@@ -71,6 +93,8 @@
           <dt>Role</dt>
           <dd>[[profile.role]]</dd>
         </dl>
+
+        <paper-button raised on-click="_signupWithGoogle">Sign up with google</paper-button>
       </div>
       <img class="profile-image" src="[[profile.image]]" />
     </div>
@@ -88,12 +112,42 @@
           profile: {
             type: Object,
             notify: true
+          },
+          user: {
+            type: Object,
+            notify: true
           }
         }
       }
 
       reload() {
         this.$.profileAjax.generateRequest();
+      }
+
+      _signupResponse(response) {
+        console.log(response);
+      }
+
+      _handleError(error) {
+        console.log(error);
+      }
+
+      _signupWithGoogle() {
+        this.$.auth.signInWithPopup()
+         .then(function(response) {
+           //console.log(this.$.auth);
+           return this.$.auth.user.getToken(true)
+         }.bind(this))
+         .then(function(idToken) {
+           console.log(idToken);
+           this.$.signupAjax.body = {
+             "signupToken": idToken
+           }
+           this.$.signupAjax.generateRequest();
+         }.bind(this))
+        .catch(function(error) {
+          console.log(error);
+        });
       }
     }
 
